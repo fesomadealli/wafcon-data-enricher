@@ -1,0 +1,32 @@
+[project]
+name = "wafcon-data-enricher"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "fesomadealli",email = "fesomade.alli@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "rapidfuzz (>=3.14.6,<4.0.0)",
+    "pandas (>=3.0.5,<4.0.0)",
+    "matplotlib (>=3.11.1,<4.0.0)",
+    "seaborn (>=0.13.2,<0.14.0)",
+    "python-dotenv (>=1.2.3,<2.0.0)",
+    "gspread (>=6.2.1,<7.0.0)",
+    "gspread-dataframe (>=4.0.0,<5.0.0)",
+    "numpy (>=2.5.2,<3.0.0)",
+    "pyarrow (>=25.0.1,<26.0.0)",
+    "plottable (>=0.1.5,<0.2.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "black (>=26.5.1,<27.0.0)",
+    "pytest (>=9.1.1,<10.0.0)"
+]
