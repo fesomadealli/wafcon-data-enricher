@@ -14,12 +14,41 @@ The project is focused on:
 
 ## Project structure
 
-- `analysis/` — Nigeria-focused and exploratory analysis helpers
-- `src/` — production pipeline code, data access, and processing modules
-- `data/raw/` — original source data files
-- `data/processed/` — generated analysis outputs
-- `notebooks/` — notebook-based exploratory work
-- `tests/` — validation and regression checks
+```text
+wafcon-data-enricher/
+├── analysis/
+│   ├── __init__.py
+│   └── nigeria.py
+├── src/
+│   ├── data_access/
+│   │   ├── __init__.py
+│   │   └── google_sheets.py
+│   ├── processing/
+│   │   ├── __init__.py
+│   │   └── match_enrichment.py
+│   ├── __init__.py
+│   ├── extract.py
+│   ├── game_state.py
+│   ├── pipeline.py
+│   ├── transform.py
+│   └── entity_resolver.py
+├── data/
+│   ├── raw/
+│   │   ├── cleaned_wafcon_match_events.csv
+│   │   ├── wafcon_2026_wide_stat_sheet.csv
+│   │   ├── wafcon_results_compiled.csv
+│   │   └── wafcon_squad_combined.csv
+│   ├── processed/
+│   │   ├── enriched.parquet
+│   │   └── review_queue.parquet
+│   └── DATA_METADATA.md
+├── notebooks/
+│   └── wafcon.ipynb
+├── tests/
+├── README.md
+├── pyproject.toml
+└── .gitignore
+```
 
 ## Data flow
 

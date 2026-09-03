@@ -138,4 +138,20 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    
+    from pathlib import Path
+    
+    loader = BaseDataLoader()
+    project_root = Path(__file__).resolve().parents[1]
+    raw_dir = project_root / "data" / "raw"
+    processed_dir = project_root / "data" / "processed"
+    
+    df_results = loader.read_csv(raw_dir / "wafcon_results_compiled.csv")
+    df_fifa_rankings = loader.read_csv(raw_dir / "wafcon_years_fifa_womens_rankings.csv")
+    df_stats = loader.read_csv(raw_dir / "wafcon_2026_wide_stat_sheet.csv")
+    
+    df_set = {"results": df_results, "womens_fifa_rankings": df_fifa_rankings, "stats": df_stats}
+    
+    for name, df in df_set.items():
+        loader.save_parquet(df=df, output_path=processed_dir/f"{name}.parquet")

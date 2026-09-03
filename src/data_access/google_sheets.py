@@ -6,9 +6,9 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-import gspread
-from google.oauth2.service_account import Credentials
-from gspread_dataframe import get_as_dataframe, set_with_dataframe
+import gspread  #type: ignore
+from google.oauth2.service_account import Credentials   #type: ignore
+from gspread_dataframe import get_as_dataframe, set_with_dataframe  #type: ignore
 
 
 @dataclass(slots=True)
